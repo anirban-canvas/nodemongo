@@ -1,14 +1,16 @@
 import  express  from 'express';
-import { MongoClient } from 'mongodb';
-
+//import { MongoClient } from 'mongodb';
+import DB from './db.js';
 const server=express();
 server.use(express.json())
-const client = new MongoClient('mongodb://localhost:27017');
-//mongodb://localhost:27017
+let password=encodeURIComponent('guvi#245');
+console.log(password)
+// const client = new MongoClient(`mongodb+srv://guvi:${password}@cluster0.4soxw27.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
 
-await client.connect();
-console.log("connected to Database")
-const DB = client.db('Academy');
+
+// await client.connect();
+// console.log("connected to Database")
+// const DB = client.db('Academy');
 
 
 // client.connect().then((res)=>{
